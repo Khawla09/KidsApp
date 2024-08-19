@@ -1,0 +1,1 @@
+//when we click product picture it takes us to the info page of this porduct

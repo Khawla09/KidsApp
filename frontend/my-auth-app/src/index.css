@@ -1,0 +1,41 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+h1{
+ 
+}
+ul{
+  list-style: none;
+}
+a{
+  /* text-decoration: none; */
+}
+.hero {
+    background-image: url('./images/5.jpg');
+    background-size: cover;
+    background-position: center;
+    height:200px; /* Adjust the height as needed */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white; /* Text color */
+    text-align: center;
+    padding: 40px 20px; /* Adjust padding as needed */
+  }
+  
+  .hero h1 {
+    font-size: 3rem; /* Adjust font size as needed */
+    font-weight: bold;
+    margin: 0;
+  }
+  
+  .hero p {
+    font-size: 1.25rem; /* Adjust font size as needed */
+    margin-top: 10px;
+  }
+  
+  .nav-bar{
+  background-color: aliceblue;
+  display: flex;
+  justify-content: space-between;
+  }
