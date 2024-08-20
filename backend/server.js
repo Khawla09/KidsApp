@@ -12,6 +12,7 @@ const connectDB = require("./db/connectDb")
 const productRouter = require("./routes/productRoute")
 const data = require("./db/products");
 const Product = require("./models/productSchema")
+const categoryRouter = require("./routes/categoryRoute")
 //connect to express
 
 const app = express();
@@ -39,9 +40,10 @@ app.get("/home",(req,res)=>{
 //seed 
 
 app.use("/api/products", productRouter);
+app.use("/api/products", categoryRouter)
 app.get('/api/seed', async (req, res) => {
   try {
-    // await Product.deleteMany({})
+    await Product.deleteMany({})
       const createProd = await Product.insertMany(data)
       res.send({createProd})
    
