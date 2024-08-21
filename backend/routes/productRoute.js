@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const Product = require("../models/productSchema")
-const {parser} = require("../utils/cloudinary")
+// const {parser} = require("../utils/cloudinary")
 const {fetchProducts,fetchOneProduct, createProduct, fetchByCategory} = require("../controllers/productController")
 
 //GET

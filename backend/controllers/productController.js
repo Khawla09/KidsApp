@@ -26,7 +26,7 @@ const fetchProducts = async (req, res) => {
   const createProduct = async (req, res) => {
     try {
       
-      const { category, name, description, price, images } = req.body;
+      const { category, name, description, price, images, quantity } = req.body;
       
       if (!category || !name || !description || !price || !images) {
         return res.status(400).json({ message: 'Missing required fields' });
@@ -39,7 +39,8 @@ const fetchProducts = async (req, res) => {
         name,
         description,
         price,
-        images
+        images,
+        quantity
         
         // rating,
         // reviews,

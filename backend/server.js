@@ -7,7 +7,7 @@ const bodyParser = require("body-parser");
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 const User = require("./models/userSchema");
-const SECRET_KEY = "secretkey";
+
 const connectDB = require("./db/connectDb")
 const productRouter = require("./routes/productRoute")
 const data = require("./db/products");
