@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link, useNavigate } from 'react-router-dom'
-
+import { PiBabyLight } from "react-icons/pi";
 function Navbar() {
   const isUserSignedin = !!localStorage.getItem('token');
   const navigate = useNavigate();
@@ -12,7 +12,7 @@ function Navbar() {
   return (
     <nav className='nav-bar'  >
   
-      <Link to="/"><h1>KIDO</h1></Link>
+      <Link to="/" ><h1 className='logo'><PiBabyLight />KIDO</h1></Link>
       <ul style={{display:"flex", gap: "20px"}}>
         {isUserSignedin ? (<>
         <Link to='/account'><li>Account</li></Link>

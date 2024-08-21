@@ -36,7 +36,10 @@ function Saisonal() {
         <Card key={product.id}> 
          {/* Link add the route to our recipes */}
           <Link to={`/products/${product._id}`}>
-          <img  src="https://buffer.com/library/content/images/size/w1200/2023/10/free-images.jpg" alt={product.name} className="product-image" />
+          <div>
+        <img src={`${product.images[0]} `}  alt="" />
+        <p>{product.images[0]}</p>
+          </div>
           <h2>{product.name}</h2>
           {/* <p>{product.description}</p> */}
           <p>Price: ${product.price}</p>
@@ -49,14 +52,7 @@ function Saisonal() {
      </Splide>
    </Wrapper>
    
-      {/* <div className="product-list">
-        {products.map(product => (
-          <ul key={product.id} className="product-card">
-            <li key={product.id}>  <img  src={product.images[0]} alt={product.name} className="product-image" />
-            <h2>{product.name}</h2>
-            <p>{product.description}</p>
-            <p>Price: ${product.price}</p>
-            </li> </ul>       ))}</div> */}
+    
             {/* <p>Rating: {product.rating} ({product.reviews} reviews)</p> */}
            
          
@@ -68,6 +64,9 @@ function Saisonal() {
 
 const Wrapper = styled.div`
 margin: 4rem 0rem;
+display:flex;
+flex-direction: column
+
 `
 const Card= styled.div`
 min-height: 25rem;
@@ -77,18 +76,19 @@ position: relative;
 
 img{
 border-radius: 1rem;
-// position: absolute;
+position: absolute;
 left:0;
 width: 100%;
-height: 100%;
+height: 100%
 object-fit: cover;
 }
-// p{
+p{
 
-// gap:5px;
-// position: absolute;
+gap:20px;
+position: absolute;
 // z-index : 10;
-// left: 50%;
+left: 50%;
+bottom:20%,
 // bottom: 0%;
 //  transform: translate(-50%, 0%);
 // color: white;
@@ -106,7 +106,7 @@ object-fit: cover;
 `
 const Gradient = styled.div`
 z-index: 3;
-// position: absolute;
+position: absolute;
 width: 100%;
 height: 100%;
 background: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0.5))

@@ -5,6 +5,7 @@ import Account from "./Account"
 import SignUp from "./SignUp"
 import Login from "./Login"
 import Product from './Product'
+import Type from './Type'
 function Pages() {
   const isUserSignedin = !!localStorage.getItem('token')
   return (
@@ -14,6 +15,7 @@ function Pages() {
   <Route path="/login" element={<Login />}  />
   <Route path="/signup" element={<SignUp />}  />
   {isUserSignedin && <Route path="/account" element={<Account />}  />}
+  <Route path='/category/:category' element = {<Type />} />
   <Route path='/products/:id' element ={<Product />} />
 </Routes>
     </div>

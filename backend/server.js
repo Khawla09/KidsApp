@@ -12,11 +12,11 @@ const connectDB = require("./db/connectDb")
 const productRouter = require("./routes/productRoute")
 const data = require("./db/products");
 const Product = require("./models/productSchema")
-const categoryRouter = require("./routes/categoryRoute")
+
 //connect to express
 
 const app = express();
-
+app.use(express.static('public'));
 
 
 // Middleware
@@ -24,6 +24,9 @@ app.use(express.json());
 app.use(cors());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json({ extended: true }));
+// app.use('/images', express.static('public/images'));
+
+
 //middleware
 app.use((req,res,next)=>{
   console.log(`${new Date().toISOString()} - ${req.method} ${req.url}`)
@@ -40,7 +43,8 @@ app.get("/home",(req,res)=>{
 //seed 
 
 app.use("/api/products", productRouter);
-app.use("/api/products", categoryRouter)
+
+// app.use("/api/products", categoryRouter)
 app.get('/api/seed', async (req, res) => {
   try {
     await Product.deleteMany({})
@@ -51,6 +55,7 @@ app.get('/api/seed', async (req, res) => {
     res.status(500).send(error);
   }
 });
+
 
 //Create User Registration(POST)
 // app.post("/register", async (req, res) => {
