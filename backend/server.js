@@ -16,7 +16,7 @@ const Product = require("./models/productSchema")
 //connect to express
 
 const app = express();
-app.use(express.static('public'));
+// app.use(express.static('public'));
 
 
 // Middleware
