@@ -1,22 +1,20 @@
-require("dotenv").config()
+require("dotenv").config();
 const express = require("express");
 const mongoose = require("mongoose");
-const PORT = process.env.PORT
+const PORT = process.env.PORT;
 const cors = require("cors");
 const bodyParser = require("body-parser");
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 const User = require("./models/userSchema");
 const SECRET_KEY = "secretkey";
-const connectDB = require("./db/connectDb")
-const productRouter = require("./routes/productRoute")
+const connectDB = require("./db/connectDb");
+const productRouter = require("./routes/productRoute");
 const data = require("./db/products");
-const Product = require("./models/productSchema")
+const Product = require("./models/productSchema");
 //connect to express
 
 const app = express();
-
-
 
 // Middleware
 app.use(express.json());
@@ -24,27 +22,25 @@ app.use(cors());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json({ extended: true }));
 //middleware
-app.use((req,res,next)=>{
-  console.log(`${new Date().toISOString()} - ${req.method} ${req.url}`)
-  next()
-})
+app.use((req, res, next) => {
+  console.log(`${new Date().toISOString()} - ${req.method} ${req.url}`);
+  next();
+});
 //connect to mongoDB
-connectDB()
-
+connectDB();
 
 //Routes CRUD
-app.get("/home",(req,res)=>{
-  res.json({msg:"heello"})
-})
-//seed 
+app.get("/home", (req, res) => {
+  res.json({ msg: "heello" });
+});
+//seed
 
 app.use("/api/products", productRouter);
-app.get('/api/seed', async (req, res) => {
+app.get("/api/seed", async (req, res) => {
   try {
     // await Product.deleteMany({})
-      const createProd = await Product.insertMany(data)
-      res.send({createProd})
-   
+    const createdProd = await Product.insertMany(data);
+    res.send({ createdProd });
   } catch (error) {
     res.status(500).send(error);
   }
@@ -98,6 +94,5 @@ app.get('/api/seed', async (req, res) => {
 
 //insert data
 
-  //listen port
-app.listen(PORT, console.log('connected to port '+PORT)
-      );
+//listen port
+app.listen(PORT, console.log("connected to port " + PORT));
