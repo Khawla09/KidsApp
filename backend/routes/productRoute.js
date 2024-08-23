@@ -1,5 +1,6 @@
 const express = require("express");
 const router = express.Router();
+<<<<<<< HEAD
 const Product = require("../models/productSchema");
 //get
 router.get("/", async (req, res) => {
@@ -48,6 +49,24 @@ router.post("/", async (req, res) => {
   //   }
   // });
 });
+=======
+const Product = require("../models/productSchema")
+// const {parser} = require("../utils/cloudinary")
+const {fetchProducts,fetchOneProduct, createProduct, fetchByCategory} = require("../controllers/productController")
+
+//GET
+router.get('/', fetchProducts);
+//Get wit id
+router.get('/:id',fetchOneProduct);
+//get by category
+
+//POST add product
+router.post("/",createProduct)
+// router.post('/', createProduct, parser.single("images"));
+
+  // fetch by category
+  router.get('/category/:category',fetchByCategory)
+>>>>>>> 8d9ef99e0dee3229d97740cedd73743c537e01e6
 
 // Get all products
 

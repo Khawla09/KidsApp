@@ -4,12 +4,12 @@ import {Splide, SplideSlide} from "@splidejs/react-splide"
 import "@splidejs/react-splide/css"
 import { Link } from 'react-router-dom';
 import styled from "styled-components"
-function Saisonal() {
+function Summer() {
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
     // Fetch product data from the backend API
-    axios.get('http://localhost:3005/api/products/category/toys')
+    axios.get('http://localhost:3005/api/products/category/clothes')
       .then(response => {
         setProducts(response.data.products);
         console.log(products)
@@ -21,7 +21,7 @@ function Saisonal() {
   return (
     <div> 
 <Wrapper>
-      <h2 >Saisonal Picks</h2>
+      <h2 >Summer Picks</h2>
       <Splide  options={{
         perPage:3,
         gap: "5rem",
@@ -83,7 +83,6 @@ height: 100%;
 object-fit: cover;
 }
 h2{
-
 color:black;
 // gap:20px;
 position: absolute;
@@ -101,9 +100,7 @@ font-family: "Matemasie", sans-serif;
 display:flex;
 justify-content: center;
 align-items: center;
-
-
-// }
+ }
 
 `
 const Gradient = styled.div`
@@ -113,7 +110,7 @@ width: 100%;
 height: 100%;
 background: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0.5))
 `
-export default Saisonal
+export default Summer
 
 //   )
   

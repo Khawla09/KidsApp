@@ -1,1 +1,13 @@
 * text=auto
+# Handle line endings for text files
+*.c text
+*.h text
+*.cpp text
+*.js text
+*.css text
+*.html text
+
+# Ensure binary files are not affected
+*.png binary
+*.jpg binary
+*.gif binary
