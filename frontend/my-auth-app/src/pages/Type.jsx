@@ -1,6 +1,7 @@
 import React, { useEffect, useState} from 'react'
 import { useParams } from 'react-router-dom';
 import axios from "axios"
+import { Link  } from 'react-router-dom';
 function Type() {
     //usestae
     let { category } = useParams();
@@ -30,10 +31,13 @@ function Type() {
   return (
 <div className="product-grid"> 
   {prodCategory.products.map((elm) => (
-    <div className="product-card" key={elm.id}>   
-      <img src={elm.images[0]} alt={elm.name} className="category-detail-image" />
+    <div className="product-card" key={elm.id}> 
+
+
+    <Link to={`/products/${elm._id}`}> <img src={elm.images[0]} alt={elm.name} className="category-detail-image" /></Link> 
       <div className='product-info'>
-        <h2>{elm.name}</h2>
+
+      <Link to={`/products/${elm._id}`}> <h2>{elm.name}</h2></Link> 
         <p className='product-price'>${elm.price}</p>
         <div className="product-sizes">
           <p style={{fontWeight:"bold"}}>Ages</p>
@@ -43,7 +47,9 @@ function Type() {
             </button>
           ))}
         </div>
-        <button className="add-to-cart">Add to Cart</button>
+
+
+        <button className="add-to-cart" onClick  >Add to Cart</button>
       </div>
     </div>
   ))}

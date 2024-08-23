@@ -9,7 +9,7 @@ const productSchema = new mongoose.Schema({
   price: { type: Number},
   images: [{ type: String}],
   sizes: [{type: String}],
-  quantity:{type: Number}
+ 
 })
 // });
 
@@ -22,4 +22,4 @@ module.exports = Product;
 //   sizes: [String],
 //   age_range: String,
 //   available_colors: [String],
-//   page_count: Number
+//   page_count: Number // quantity:{type: Number}

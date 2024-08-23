@@ -1,5 +1,6 @@
 
 const Product = require("../models/productSchema")
+
 const fetchProducts = async (req, res) => {
     try {
         

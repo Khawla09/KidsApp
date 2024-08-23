@@ -15,34 +15,30 @@ body {
   color: #333; /* Set a neutral text color */
   background-color: #f9f9f9; /* Set a light background color */
   box-sizing: border-box; /* Ensure padding and borders are included in element's total width and height */
-}
-
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-h1{
  
 }
+
+
 ul{
   list-style: none;
 }
 a{
   text-decoration: none;
 }
-.hero {
+/* .hero {
     background-image: url('https://images.pexels.com/photos/207891/pexels-photo-207891.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
     background-size: cover;
     background-position: center;
     height:360px; /* Adjust the height as needed */
-    display: flex;
+    /* display: flex;
     align-items: center;
-    justify-content: center;
-    color: white; /* Text color */
-    text-align: center;
+    justify-content: center; */
+    /* color: white; Text color */
+    /* text-align: center;
     padding: 40px 20px;
-    border-radius: 20px;
-    /* Adjust padding as needed */
-  }
+    border-radius: 20px; */
+    /* Adjust padding as needed }  */
+
   /* logo.css */
 .logo {
   display: flex;
@@ -79,6 +75,7 @@ a{
   background-color: white;
   display: flex;
   justify-content: space-between;
+  align-items: center;
   }
 /* ******************************************************* navbar  *************************************************************/
 .signout-btn, .signup-btn, .login-btn{
@@ -204,7 +201,7 @@ a{
 display: flex;
 justify-content: center;
 align-items: center;
-gap: 20px;
+gap: 150px;
 padding: 20px;
 font-size: 2rem;
 
@@ -223,3 +220,5 @@ font-size: 2rem;
   background: #f39c12;
   transition: background 0.3s ease-in-out;
 }
+
+/* git pull */
